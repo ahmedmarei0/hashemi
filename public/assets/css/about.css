@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Helvet';
+    src: url('../fonts/HelveticaNeueLTArabic-Roman.eot');
+    src: url('../fonts/HelveticaNeueLTArabic-Roman.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/HelveticaNeueLTArabic-Roman.woff2') format('woff2'),
+        url('../fonts/HelveticaNeueLTArabic-Roman.woff') format('woff'),
+        url('../fonts/HelveticaNeueLTArabic-Roman.ttf') format('truetype'),
+        url('../fonts/HelveticaNeueLTArabic-Roman.svg#HelveticaNeueLTArabic-Roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+.bg-green{
+    background: #00AB41;
+}
+.text-green{
+    color: #00AB41;
+}
+.bg-oringe{
+    background: #F74A40;
+}
+.text-oringe{
+    color: #F74A40;
+}
+#services{
+    padding: 20px 0px;
+}
+#services .services-card{
+    margin: 12px 0px;
+}
+#services .icon{
+    display: inline-block;
+    font-size: 3.55rem;
+    background-color: #fff;
+    color: #1D809F;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5.5rem;
+    font-size: 2.25rem;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 10%);
+    border-radius: 50% !important;
+}
+#services .icon i{
+    color: #F74A40 !important;
+    background-color: white;
+}
+#list-services{
+    margin:  40px 0px;
+}
+.btn-custom{
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+footer .footer{
+    padding: 20px 0px;
+    background: #00AB41;
+    text-align: center;
+}
+footer .footer .icon{
+    display: inline-block;
+    font-size: 24px;
+    background-color: whitesmoke;
+    color: #317A4D;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 10%);
+    border-radius: 50% !important;
+}
