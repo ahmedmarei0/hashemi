@@ -218,7 +218,7 @@
         <div class="col-12 px-0 pb-4 text-center justify-content-center align-items-center ">
             <a href="{{route('admin.profile.edit')}}">
 
-            <img src="{{auth()->user()->getUserAvatar()}}" style="width: 80px;height: 80px;color: var(--background-1);border-radius: 50%" class="d-inline-block">
+            <img src="{{ asset(auth()->user()->getUserAvatar()) }}" style="width: 80px;height: 80px;color: var(--background-1);border-radius: 50%" class="d-inline-block">
                 </a>
                 <div class="col-12 px-0 mt-2 text-center" style="color: #232323;">
                     مرحباً {{auth()->user()->name}}
