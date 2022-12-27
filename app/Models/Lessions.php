@@ -25,7 +25,7 @@ class Lessions extends Model
     }
 
     public function course(){
-        return $this->belongsTo(\App\Models\Course::class);
+        return $this->belongsTo(\App\Models\Courses::class,'course_id','id');
     }
     public function attachments(){
         return $this->hasMany(\App\Models\Attachments::class, 'lesson_id');

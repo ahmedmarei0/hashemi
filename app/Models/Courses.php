@@ -14,7 +14,7 @@ class Courses extends Model
     }
 
     public function subject(){
-        return $this->belongsTo(\App\Models\Subjects::class);
+        return $this->belongsTo(\App\Models\Subjects::class, 'subject_id', 'id');
     }
     public function added_by(){
 

@@ -22,6 +22,7 @@ class AuthController extends Controller
             'mac_address' =>"required|string",
             'username' =>"required|string",
             'password' =>"required|string",
+            'notification_token' =>"required|string",
         ]);
 
         $user = User::where('username', $request->username)->first();
@@ -37,6 +38,7 @@ class AuthController extends Controller
             $user->password = Hash::make($request->password);
             $user->mac_address = $request->mac_address;
             $user->remember_token = $token;
+            $user->notification_token = $request->notification_token;
             $user->save();
             return $this -> returnSuccessMessage($user );
         }

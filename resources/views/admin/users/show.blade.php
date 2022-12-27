@@ -20,7 +20,7 @@
             <div class="col-12 p-0 row justify-content-center">
                 <div class="col-12 row p-0">
                     <div class="col-12 col-sm-6 col-lg-4 col-xl-3  px-2 mb-3">
-                        <a href="{{route('admin.articles.index',['user_id'=>$user->id])}}" style="color:inherit;">
+                        <a href="#" style="color:inherit;">
                             <div class="col-12 px-0 py-2 d-flex rounded-3 main-box-wedit" style="background: #ffffff;">
                                 <div style="width: 80px;" class="p-2">
                                     <div class="col-12 px-0 text-center d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,.04),rgba(0,0,0,.04))!important;height: 64px;border-radius: 50%;">

@@ -85,6 +85,8 @@ Route::prefix('admin')->middleware(['auth','ActiveAccount'])->name('admin.')->gr
         Route::post('lesson/sheet/{attachment}', [App\Http\Controllers\Admin\Courses\SheetsController::class , 'update'])->name('lesson.sheet.update');
         Route::delete('lesson/sheet/delete/{attachment}', [App\Http\Controllers\Admin\Courses\SheetsController::class , 'destroy'])->name('lesson.sheet.delete');
 
+        Route::get('student/sheets/receive/{subject}', [App\Http\Controllers\Admin\Courses\SheetsController::class , 'receive_sheet'])->name('student.sheets.receive');
+
         Route::get('lesson/sheet/student/show/{lesson}', [App\Http\Controllers\Admin\Courses\SheetsReceivedFromStudentsController::class , 'index'])->name('lesson.sheet.student.show');
         Route::get('lesson/sheet/student/absence/show/{lesson}', [App\Http\Controllers\Admin\Courses\SheetsReceivedFromStudentsController::class , 'absence'])->name('lesson.sheet.absence.student.show');
 
@@ -104,6 +106,7 @@ Route::prefix('admin')->middleware(['auth','ActiveAccount'])->name('admin.')->gr
         Route::post('contacts/resolve',[ContactController::class,'resolve'])->name('contacts.resolve');
         Route::resource('contacts',ContactController::class);
         Route::resource('menus',MenuController::class);
+        Route::get('user/details/{user}', [UserController::class , "show"])->name('user.details.show');
         Route::resource('users',UserController::class);
         Route::get('users/show/{type}',[UserController::class , 'show_users'])->name('users.filter.show');
         Route::resource('roles',RoleController::class);

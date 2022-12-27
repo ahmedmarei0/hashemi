@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('file');
             $table->timestamp('final_date_receive')->nullable();
+            $table->enum('state', ['waiting', 'reviewed', 'endless'])->default('waiting');
             $table->timestamps();
         });
     }

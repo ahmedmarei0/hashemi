@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('warnings', function (Blueprint $table) {
+        Schema::create('notifications_sheets', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
+             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on("users")->onDelete('cascade');
             $table->unsignedBigInteger('lesson_id')->nullable();
             $table->foreign('lesson_id')->references('id')->on("lessons")->onDelete('cascade');
             $table->unsignedBigInteger('subject_id')->nullable();
             $table->foreign('subject_id')->references('id')->on("subjects")->onDelete('cascade');
-            $table->string('reason')->nullable();
-            $table->enum('type', ['login', 'sheet_delay', 'share_account','login_failed', 'admin_reason']);
-            $table->tinyInteger('state')->default(0);
+            $table->string('title')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('warnings');
+        Schema::dropIfExists('notifications_sheets');
     }
 };

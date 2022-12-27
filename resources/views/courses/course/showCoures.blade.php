@@ -9,15 +9,17 @@
 					<span class="fas fa-pages"></span> الفصول
 				</div>
 
-				<div class="col-12 col-lg-4 p-2 text-lg-end">
+				<div class="col-12 col-lg-6 p-2 text-lg-end">
 					@permission('courses-create')
 					<a href="{{route('admin.course.create', ['subject'=> $subject])}}">
 					<span class="btn btn-primary"><span class="fas fa-plus"></span> إضافة فصل جديد</span>
 					</a>
 					@endpermission
+                    <a href="{{route('admin.student.sheets.receive', ['subject'=> $subject])}}">
+                        <span class="btn btn-primary"><span class="fas fa-users"></span> طالب لم يسلموا الواجب</span>
+                    </a>
 				</div>
 			</div>
-			<div class="col-12 divider" style="min-height: 2px;"></div>
 		</div>
 
 		<div class="col-12 py-2 px-2 row">

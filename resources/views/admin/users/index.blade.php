@@ -94,7 +94,7 @@
                             <td>{{$user->phone}}</td>
                             <td>
                                 @permission('users-read')
-                                <a href="{{route('admin.users.show',$user)}}">
+                                <a href="{{route('admin.user.details.show',$user)}}">
                                     <span class="btn  btn-outline-primary btn-sm font-1 mx-1">
                                         <span class="fas fa-search "></span> عرض
                                     </span>

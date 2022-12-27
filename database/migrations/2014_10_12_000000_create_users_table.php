@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('last_activity')->nullable()->index();
             $table->string('password')->default('0');
             $table->string('mac_address');
+            $table->longText('notification_token')->nullable();
             $table->string('type');
             $table->rememberToken();
             $table->timestamps();
