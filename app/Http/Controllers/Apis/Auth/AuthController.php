@@ -48,6 +48,7 @@ class AuthController extends Controller
                 $user->tokens()->delete();
                 $token = $user->createToken('myapptoken')->plainTextToken;
                 $user->remember_token = $token;
+                $user->notification_token = $request->notification_token;
                 $user->save();
                 return $this -> returnSuccessMessage( $user);
             }

@@ -41,7 +41,7 @@ class SheetsController extends Controller
             // return $subjectReceivedSheet;
 
             foreach ($users as $user) {
-                return $user;
+                // return $user;
 
                 //student doesn't receive sheet
                 if(!in_array($user->id, $subjectReceivedSheet)){
