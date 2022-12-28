@@ -34,6 +34,7 @@
                             <th>الاسم</th>
                             <th>البريد</th>
                             <th>الهاتف</th>
+                            <th>عداد المرات لم يسلم الواجب</th>
                             <th>تحكم</th>
                         </tr>
                     </thead>
@@ -44,6 +45,7 @@
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->phone}}</td>
+                            <td>{{$user->alerts}}</td>
                             <td>
                                 @if ($user->blocked == 0)
                                 <form method="POST" action="{{route('admin.users.block', ['user' => $user->id])}}"
