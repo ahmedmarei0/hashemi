@@ -65,6 +65,11 @@
                                     </button>
                                 </form>
                                 @endif
+                                <a href="{{route('admin.users.notes.show',$user->id)}}">
+                                    <span class="btn btn-outline-primary btn-sm font-1 mx-1">
+                                        <span class="fal fa-key "></span> الملاحظات
+                                    </span>
+                                </a>
 
 
                             </td>
