@@ -45,7 +45,7 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->phone}}</td>
                             <td>
-                                @if ($user->blocked ===0)
+                                @if ($user->blocked == 0)
                                 <form method="POST" action="{{route('admin.users.block', ['user' => $user->id])}}"
                                     class="d-inline-block">@csrf
                                     <button class="btn  btn-outline-danger btn-sm font-1 mx-1"

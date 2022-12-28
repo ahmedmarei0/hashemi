@@ -13,7 +13,7 @@ trait GeneralTrait
         try {
             //$token_1 = 'e6WBgNuvz0WdoCSZxLpOKM:APA91bFYgWK6jtSrMlG0axpGzWdBz7emIRrc16MCO3Z8jW3gD2NSkGdfaF-y_3pt_k7oh8ZbFUGb0roDp4ycFidta4iGtDEfMAZPfbJTVdyqXhTXYLOnH3LUoCnCAvyvPo6qM-NtLF63';
             $url = 'https://fcm.googleapis.com/fcm/send';
-            $serverKey = 'AAAAtxCDEp0:APA91bETDiR9e9oAX1y8w560tyIdZJXUS7-OR671Aqa6OcvxJChO8VlEy-Dz3a-3I8dkyVLU9iIhbjs6LK46sLQSybUxLQ4sdHp9gJYTvQYLR0-JllRr9fhXRuqxYLWQ0jVzqIHvr2mX';
+            $serverKey = env('SERVER_KEY');
 
             $data = [
                 "registration_ids" => [
