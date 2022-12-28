@@ -86,6 +86,7 @@ Route::prefix('admin')->middleware(['auth','ActiveAccount'])->name('admin.')->gr
         Route::delete('lesson/sheet/delete/{attachment}', [App\Http\Controllers\Admin\Courses\SheetsController::class , 'destroy'])->name('lesson.sheet.delete');
 
         Route::get('student/sheets/receive/{subject}', [App\Http\Controllers\Admin\Courses\SheetsController::class , 'receive_sheet'])->name('student.sheets.receive');
+        Route::post('student/block/{user}', [App\Http\Controllers\Admin\Courses\SheetsController::class , 'user_block'])->name('users.block');
 
         Route::get('lesson/sheet/student/show/{lesson}', [App\Http\Controllers\Admin\Courses\SheetsReceivedFromStudentsController::class , 'index'])->name('lesson.sheet.student.show');
         Route::get('lesson/sheet/student/absence/show/{lesson}', [App\Http\Controllers\Admin\Courses\SheetsReceivedFromStudentsController::class , 'absence'])->name('lesson.sheet.absence.student.show');

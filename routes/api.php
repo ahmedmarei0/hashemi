@@ -21,4 +21,5 @@ Route::group(['middleware' => ['auth:sanctum']],function () {
     // Route::post('/message/show/{page?}', [App\Http\Controllers\Apis\Courses\CoursesController::class , 'show_message']);
     Route::post('/contact/add', [App\Http\Controllers\Apis\Courses\CoursesController::class , 'contact_post']);
     Route::post('/contact/show', [App\Http\Controllers\Apis\Courses\CoursesController::class , 'show_contacts']);
+    Route::post('/notification/show', [App\Http\Controllers\Apis\Courses\CoursesController::class , 'show_notifications']);
 });

@@ -170,4 +170,10 @@ class CoursesController extends Controller
 
         return $this->returnSuccessMessage($contacts);
     }
+    public function show_notifications(){
+        $notifications =  \App\Models\NotificationsSheets::select(['id', 'title', 'description', 'created_at'])
+                            ->where('user_id', 19)->orderBy('created_at','DESC')->paginate();
+
+        return $this->returnSuccessMessage($notifications);
+    }
 }

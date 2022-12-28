@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        \App\Console\Commands\SheetReviewed::class,
     ];
 
     /**
@@ -24,9 +24,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('sheet:review')->everyMinute()->appendOutputTo('schedule.log');
+
         $schedule->call('\App\Http\Controllers\ScheduleController@clean_items_seens')->daily();
         $schedule->call('\App\Http\Controllers\ScheduleController@clean_dashboard_logs')->daily();
-        
+
         // $schedule->command('inspire')->hourly();
     }
 
