@@ -10,6 +10,8 @@ Route::get('/register', [App\Http\Controllers\HomeController::class,'register'])
 Route::post('/login', [App\Http\Controllers\Apis\Auth\AuthController::class,'login']);
 
 Route::group(['middleware' => ['auth:sanctum']],function () {
+    Route::post('/app/image', [App\Http\Controllers\Apis\Courses\CoursesController::class , 'app_image']);
+
     Route::pattern('id', '[0-9]+');
     Route::post('/logout', [App\Http\Controllers\Apis\Auth\AuthController::class , 'logout']);
     Route::post('/subjects', [App\Http\Controllers\Apis\Courses\CoursesController::class , 'show_subjects']);
