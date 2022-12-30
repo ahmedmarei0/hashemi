@@ -42,7 +42,12 @@ class CoursesController extends Controller
                                     }]);
                             }]);
                     }])->where('state', 'shown')->whereIn('id', $studentSubjects)->get();
-        return $this->returnSuccessMessage($subjects);
+    $images = [
+        "cover1" => env("STORAGE_URL"). "/uploads/mock4.jpg",
+        "cover2" => env("STORAGE_URL"). "/uploads/mock2.jpg",
+        "mock3.jpg" => env("STORAGE_URL"). "/uploads/mock3.jpg"
+    ];
+        return $this->returnSuccessMessage([ 'subjects' => $subjects , 'images' => $images]);
     }
 
 
