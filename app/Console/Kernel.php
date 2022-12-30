@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('sheet:review')->everyMinute()->appendOutputTo('schedule.log');
+        $schedule->command('sheet:review')->cron('0 0/6 * * *')->appendOutputTo('schedule.log');
 
         $schedule->call('\App\Http\Controllers\ScheduleController@clean_items_seens')->daily();
         $schedule->call('\App\Http\Controllers\ScheduleController@clean_dashboard_logs')->daily();
