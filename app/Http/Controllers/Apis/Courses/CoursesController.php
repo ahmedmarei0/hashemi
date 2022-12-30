@@ -43,9 +43,9 @@ class CoursesController extends Controller
                             }]);
                     }])->where('state', 'shown')->whereIn('id', $studentSubjects)->get();
     $images = [
-        env("APP_URL").env("STORAGE_URL"). "/uploads/mock4.jpg",
-        env("APP_URL").env("STORAGE_URL"). "/uploads/mock2.jpg",
-        env("APP_URL").env("STORAGE_URL"). "/uploads/mock3.jpg"
+        env("APP_URL").env("STORAGE_URL"). "/uploads/app/mock4.jpg",
+        env("APP_URL").env("STORAGE_URL"). "/uploads/app/mock2.jpg",
+        env("APP_URL").env("STORAGE_URL"). "/uploads/app/mock3.jpg"
     ];
         return $this->returnSuccessMessage([ 'subjects' => $subjects , 'images' => $images]);
     }
@@ -183,9 +183,9 @@ class CoursesController extends Controller
     }
     public function app_image(){
         $images = [
-            env("APP_URL").env("STORAGE_URL"). "/uploads/mock4.jpg",
-            env("APP_URL").env("STORAGE_URL"). "/uploads/mock2.jpg",
-            env("APP_URL").env("STORAGE_URL"). "/uploads/mock3.jpg"
+            env("APP_URL").env("STORAGE_URL"). "/uploads/app/mock4.jpg",
+            env("APP_URL").env("STORAGE_URL"). "/uploads/app/mock2.jpg",
+            env("APP_URL").env("STORAGE_URL"). "/uploads/app/mock3.jpg"
         ];
 
            return $this->returnSuccessMessage($images);
