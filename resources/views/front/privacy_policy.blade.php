@@ -35,14 +35,56 @@
                 <li class="list-group-item">
                     <p>
                         <button id="Privacy1" class="btn text-oringe btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#Privacy" aria-expanded="true" aria-controls="Privacy">
-                            سياسة الخصوصية الخاصة بنا
+                            اولا
                             <i class="fa fa-chevron-up" aria-hidden="true"></i>
                         </button>
                     </p>
                     <div class="collapse show" id="Privacy">
                         <div class="card card-body">
                             <p>
-                                يتم شرح المواد عن طريق فيديوهات بشكل مفصل
+                                تركز منصة «الهاشمي» على مساعدة طلاب المدارس في عدد من الدول العربية، من خلال تقديم شروح مبسطة للمناهج الدراسية، من المرحلة الابتدائية، وحتى المرحلة الثانوية.
+
+                                تغطي المنصة المناهج الدراسية في الدول العربيه، عن طريق مواد مصورة، مجانية بالكامل، تتراوح مدة الواحدة ما بين خمس دقائق وعشرين دقيقة. وحتى الآن – حسب المنصة .
+
+                                ولا يقتصر المحتوى على المنصة على المناهج الدراسية فقط، بل يشمل «عددًا من المقررات التعليمية العامة»، التي يمكن أن تُفيد أي مُتعلم، منها أساسيات النحو والصرف، وأساسيات الرياضيات، وأساسيات البحث العلمي.
+
+                                واحدة من الخدمات الهامة، التي تقدمها منصة «الهاشمي»، والتي تُمكّن الطالب من طرح أي سؤال يواجهه، في مختلف المناهج التي يدرسها، ويتلقى جوابًا عليه، في شكل من أشكال التفاعل المميز للمنصات الجيدة للتعلم عبر الإنترنت
+                            </p>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        <button id="Privacy1" class="btn text-oringe btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#Privacy" aria-expanded="true" aria-controls="Privacy">
+                            ثانيا
+                            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                        </button>
+                    </p>
+                    <div class="collapse show" id="Privacy">
+                        <div class="card card-body">
+                            <p>
+                                تتيح المنصة، للطلاب الراغبين في التعلم عبر الإنترنت، عددًا كبيرًا من الدورات التدريبية، في مجالات مختلفة، مثل ريادة الأعمال والتسويق والمبيعات والمحاسبة، وكذلك خدمة العملاء، وتكنولوجيا المعلومات، والمهارات الشخصية، والتسويق العقاري، إلى جانب دورات في اللغة الإنجليزية، وإدارة الجودة، والاقتصاد والقانون.
+                            </p>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <p>
+                        <button id="Privacy1" class="btn text-oringe btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#Privacy" aria-expanded="true" aria-controls="Privacy">
+                            ثالثا
+                            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                        </button>
+                    </p>
+                    <div class="collapse show" id="Privacy">
+                        <div class="card card-body">
+                            <p>
+                                تعتمد المنصة على نظام الاشتراك الواحد، مقابل إتاحة كل المحتوى المنشور عليها. أي أنك بمجرد دفع قيمة أي اشتراك على المنصة، يصبح في مقدورك البدء في أي دورة من الدورات المتنوعة التي تقدمها.
+
+يتنوع المحتوى الذي يمكن للطلاب تعلمه على منصة «ينفع»، ما بين دورات تدريبية في الرسم والتصميم، وصناعة الأفلام، وكتابة المحتوى، وتكنولوجيا المعلومات، بجانب التحريك، والموارد البشرية، واللغات.
                             </p>
 
 
