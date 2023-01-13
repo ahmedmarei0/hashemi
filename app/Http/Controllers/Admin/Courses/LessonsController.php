@@ -69,7 +69,7 @@ class LessonsController extends Controller
         "video"=>$request->video
     ]);
     toastr()->success('تم إضافة الدرس بنجاح','عملية ناجحة');
-    return redirect()->route('admin.course.show',['course'=>$request->course_id]);
+    return redirect()->route('admin.course.lesson.show',['course'=>$request->course_id]);
     }
 
     /**
