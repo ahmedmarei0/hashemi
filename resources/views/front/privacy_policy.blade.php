@@ -35,7 +35,7 @@
                 <li class="list-group-item">
                     <p>
                         <button id="Privacy1" class="btn text-oringe btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#Privacy" aria-expanded="true" aria-controls="Privacy">
-                            اولا
+                            سياستنا
                             <i class="fa fa-chevron-up" aria-hidden="true"></i>
                         </button>
                     </p>
@@ -58,14 +58,14 @@
                 <li class="list-group-item">
                     <p>
                         <button id="Privacy1" class="btn text-oringe btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#Privacy" aria-expanded="true" aria-controls="Privacy">
-                            ثانيا
+                            سياسة المستخدم
                             <i class="fa fa-chevron-up" aria-hidden="true"></i>
                         </button>
                     </p>
                     <div class="collapse show" id="Privacy">
                         <div class="card card-body">
                             <p>
-                                يتيح تطبيق أكسفورد للطلاب الراغبين في التعلم عبر الإنترنت، عددًا كبيرًا من المواد الدراسية مثل مادة الكيمياء و الفيزياء وغيرها من المواد.
+                                يتيح تطبيق أكسفورد للطلاب الراغبين في التعلم عبر الإنترنت،يكون الأشتراك عبر الأشتراك عن طريق أدارة تطبيق أكسفورد و دفع اشتراك مقابل الخدمة ويتيح للمستخدم عددًا كبيرًا من شروحات المواد الدراسية مثل مادة الكيمياء و الفيزياء وغيرها من المواد .
                             </p>
 
 
@@ -75,14 +75,14 @@
                 <li class="list-group-item">
                     <p>
                         <button id="Privacy1" class="btn text-oringe btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#Privacy" aria-expanded="true" aria-controls="Privacy">
-                            ثالثا
+                            سياسة الأشتراك
                             <i class="fa fa-chevron-up" aria-hidden="true"></i>
                         </button>
                     </p>
                     <div class="collapse show" id="Privacy">
                         <div class="card card-body">
                             <p>
-                                يعتمد تطبيق أكسفورد على نظام الاشتراك فى المواد الدراسية التى تريد البداء فى الدراسة فيها من باقة لكل مادة دراسية او مجموعة موادة دراسة او حتى حساب بريم
+                                يعتمد تطبيق أكسفورد على نظام الاشتراك فى المواد الدراسية التى تريد البدء فى الدراسة فيها من باقة لكل مادة دراسية او مجموعة موادة دراسة او حتى حساب بريم
                             </p>
 
 
@@ -96,7 +96,7 @@
 
     <footer>
         <div class="footer">
-            <div class="icon">
+            {{-- <div class="icon">
                 <i class="fa fa-snapchat"></i>
             </div>
             <div class="icon">
@@ -107,7 +107,7 @@
             </div>
             <div class="icon">
                 <i class="fa fa-twitter"></i>
-            </div>
+            </div> --}}
 
             <p class="pt-3 m-0">حقوق الطباعة والنشر محفوظ لأحمد مرعي</p>
             <span>Copyright &copy; GAMA Team.</span>
