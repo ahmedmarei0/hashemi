@@ -27,10 +27,10 @@ class AuthController extends Controller
 
         $user = User::where('username', $request->username)->first();
         if($user === null){
-            return $this->returnError('E001', 'user is not exist');
+            return $this->returnErrorApi('100008', 'user is not exist');
         }
         else if($user->blocked == 1 ){
-            return $this->returnError('E002', 'this user is blocked');
+            return $this->returnErrorApi('100002', 'this user is blocked');
         }
         else if($user->mac_address == null || $user->mac_address == ''){
             $user->tokens()->delete();
@@ -40,7 +40,7 @@ class AuthController extends Controller
             $user->remember_token = $token;
             $user->notification_token = $request->notification_token;
             $user->save();
-            return $this -> returnSuccessMessage($user );
+            return $this -> returnSuccessMessageApi($user );
         }
         if(Hash::check($request->password, $user->password)){
 
@@ -51,7 +51,7 @@ class AuthController extends Controller
                 $user->remember_token = $token;
                 $user->notification_token = $request->notification_token;
                 $user->save();
-                return $this -> returnSuccessMessage( $user);
+                return $this -> returnSuccessMessageApi( $user);
             }
             else{
 
@@ -74,7 +74,7 @@ class AuthController extends Controller
                         'type' => 'share_account'
                     ]);
                 }
-              return $this->returnError('E003', 'another device');
+              return $this->returnErrorApi('777777', 'another device');
 
             }
         }
@@ -95,13 +95,13 @@ class AuthController extends Controller
                 $user->save();
             }
 
-            return $this->returnError('E004', 'username or password wrong');
+            return $this->returnErrorApi('100004', 'username or password wrong');
         }
     }
 
     public function logout(Request $request)
     {
         auth()->user()->tokens()->delete();
-        return $this -> returnSuccessMessage(['logout_time' => Carbon::now()]);
+        return $this -> returnSuccessMessageApi(['logout_time' => Carbon::now()]);
     }
 }

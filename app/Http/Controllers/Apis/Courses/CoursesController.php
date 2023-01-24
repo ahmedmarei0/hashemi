@@ -47,14 +47,14 @@ class CoursesController extends Controller
         env("APP_URL").env("STORAGE_URL"). "/app/mock2.jpg",
         env("APP_URL").env("STORAGE_URL"). "/app/mock3.jpg"
     ];
-        return $this->returnSuccessMessage([ 'subjects' => $subjects , 'images' => $images]);
+        return $this->returnSuccessMessageApi([ 'subjects' => $subjects , 'images' => $images]);
     }
 
 
     public function show_courses()
     {
         $courses = Courses::select(['id', 'title', 'description'])->get();
-        return $this->returnSuccessMessage($courses);
+        return $this->returnSuccessMessageApi($courses);
     }
 
     public function show_lesson($id)
@@ -66,7 +66,7 @@ class CoursesController extends Controller
 
                         return  $query->select(['id', 'lesson_id','title','description',\DB::raw("concat('$link',file) as file"),'final_date_receive'])->get();
                     }])->get();
-        return $this->returnSuccessMessage($lessons);
+        return $this->returnSuccessMessageApi($lessons);
     }
 
     public function attendance(Request $request)
@@ -83,11 +83,11 @@ class CoursesController extends Controller
                 'lesson_id' => $request->lesson_id,
                 'count' => 1,
             ]);
-            return $this->returnSuccessMessage('attendants add successfully');
+            return $this->returnSuccessMessageApi('attendants add successfully');
         } else {
             $attendant->count++;
             $attendant->save();
-            return $this->returnSuccessMessage('attendants counted successfully');
+            return $this->returnSuccessMessageApi('attendants counted successfully');
         }
     }
 
@@ -112,13 +112,13 @@ class CoursesController extends Controller
                     'lesson_id' => $request->lesson_id,
                     'file' => $file['filename'],
                 ]);
-                return $this->returnSuccessMessage('sheet added successfully');
+                return $this->returnSuccessMessageApi('sheet added successfully');
             }else{
-                return $this->returnError("E002", "Failed to upload the file");
+                return $this->returnErrorApi("100014", "Failed to upload the file");
             }
         }else{
 
-            return $this->returnError("E001", "You have already uploaded the homework for this lesson");
+            return $this->returnErrorApi("100015", "You have already uploaded the homework for this lesson");
         }
 
     }
@@ -134,7 +134,7 @@ class CoursesController extends Controller
             'student_id' => $request->student_id,
             'content' => $request->content,
         ]);
-        return $this->returnSuccessMessage('message added successfully');
+        return $this->returnSuccessMessageApi('message added successfully');
 
     }
 
@@ -143,7 +143,7 @@ class CoursesController extends Controller
 
         $messages = Message::where('student_id', auth()->user()->id)
             ->orderBy('created_at')->simplePaginate(10);
-        return $this->returnSuccessMessage($messages);
+        return $this->returnSuccessMessageApi($messages);
 
     }
 
@@ -163,23 +163,23 @@ class CoursesController extends Controller
                 'phone'=>auth()->user()->phone,
                 'message'=>/*"قادم من : ".urldecode(url()->previous())."\n\nالرسالة : ".*/$request->message
             ]);
-           return $this->returnSuccessMessage('تم استلام رسالتك بنجاح وسنتواصل معك في أقرب وقت');
+           return $this->returnSuccessMessageApi('تم استلام رسالتك بنجاح وسنتواصل معك في أقرب وقت');
         }
         else{
-            return $this->returnError("E001", "لقد ارسلت من قبل رسالة هذا اليوم للدعم سوف يتم التواصل معك");
+            return $this->returnErrorApi("100016", "لقد ارسلت من قبل رسالة هذا اليوم للدعم سوف يتم التواصل معك");
         }
     }
 
     public function show_contacts(){
         $contacts =  \App\Models\Contact::with('replies')->where('user_id', auth()->id())->orderBy('id','DESC')->paginate();
 
-        return $this->returnSuccessMessage($contacts);
+        return $this->returnSuccessMessageApi($contacts);
     }
     public function show_notifications(){
         $notifications =  \App\Models\NotificationsSheets::select(['id', 'title', 'description', 'created_at'])
                             ->where('user_id', auth()->id())->orderBy('created_at','DESC')->paginate();
 
-        return $this->returnSuccessMessage($notifications);
+        return $this->returnSuccessMessageApi($notifications);
     }
     public function app_image(){
         $images = [
@@ -188,7 +188,7 @@ class CoursesController extends Controller
             env("APP_URL").env("STORAGE_URL"). "/app/mock3.jpg"
         ];
 
-           return $this->returnSuccessMessage($images);
+           return $this->returnSuccessMessageApi($images);
     }
 
 }
