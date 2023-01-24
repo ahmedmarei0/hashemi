@@ -74,7 +74,7 @@ class AuthController extends Controller
                         'type' => 'share_account'
                     ]);
                 }
-              return $this->returnErrorApi('777777', 'another device');
+              return $this->returnErrorApi('100016', 'another device');
 
             }
         }
