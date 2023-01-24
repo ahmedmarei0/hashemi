@@ -29,10 +29,10 @@ class AuthController extends Controller
         if($user === null){
             return $this->returnError('E001', 'user is not exist');
         }
-        else if($user->blocked == 1){
+        else if($user->blocked == 1 ){
             return $this->returnError('E002', 'this user is blocked');
         }
-        else if($user->password == 0){
+        else if($user->mac_address == null || $user->mac_address == ''){
             $user->tokens()->delete();
             $token = $user->createToken('myapptoken')->plainTextToken;
             $user->password = Hash::make($request->password);
@@ -44,6 +44,7 @@ class AuthController extends Controller
         }
         if(Hash::check($request->password, $user->password)){
 
+            // return $user;
             if($user->mac_address == $request->mac_address || $user->mac_address === null || empty($user->mac_address)){
                 $user->tokens()->delete();
                 $token = $user->createToken('myapptoken')->plainTextToken;
@@ -89,7 +90,7 @@ class AuthController extends Controller
                             $query->where('type', 'login')->where('state', 0)
                             ->whereDate('created_at', Carbon::today());
                         }])->first();
-            if($userWarning->warning !== null && count($userWarning->warning) > 5){
+            if($userWarning->warning !== null && count($userWarning->warning) > 3){
                 $user->blocked = 1;
                 $user->save();
             }
