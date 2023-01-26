@@ -166,7 +166,7 @@ class CoursesController extends Controller
            return $this->returnSuccessMessageApi('تم استلام رسالتك بنجاح وسنتواصل معك في أقرب وقت');
         }
         else{
-            return $this->returnErrorApi("100016", "لقد ارسلت من قبل رسالة هذا اليوم للدعم سوف يتم التواصل معك");
+            return $this->returnErrorApi("100017", "لقد ارسلت من قبل رسالة هذا اليوم للدعم سوف يتم التواصل معك");
         }
     }
 
