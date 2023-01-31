@@ -216,7 +216,7 @@ class UserController extends Controller
                 }
             }
          }
-        // return $subjects;
+        return $subjects;
         return view('admin.users.edit',compact('user','roles', 'subjects', 'StudentSubjects'));
     }
 
