@@ -216,6 +216,7 @@ class UserController extends Controller
                 }
             }
          }
+        // return $subjects;
         return view('admin.users.edit',compact('user','roles', 'subjects', 'StudentSubjects'));
     }
 
@@ -244,9 +245,12 @@ class UserController extends Controller
             'bio'=>"nullable|max:5000",
             'blocked'=>"required|in:0,1",
             'email'=>"required|unique:users,email,".$user->id,
+            'username'=>"string|max:190|unique:users,username,".$user->id,
             'password'=>"nullable|min:8|max:190"
         ]);
+        // return $request->all();
         $StudentSubjects =StudentSubjects::where('user_id', $user->id)->where('state', 'active')->get();
+
         if($request->subjects != null){
             foreach ($request->subjects as $subject) {
                 if($this->checkArray($StudentSubjects, $subject) === false){
@@ -283,6 +287,7 @@ class UserController extends Controller
             "bio"=>$request->bio,
             "blocked"=>$request->blocked,
             "email"=>$request->email,
+            "username"=>$request->username,
 
         ]);
         if(auth()->user()->isAbleTo('user-roles-update') && $request->has('roles')){
