@@ -209,7 +209,8 @@ class UserController extends Controller
         $subjects = \App\Models\Subjects::get();
 
         $StudentSubjects =StudentSubjects::where('user_id', $user->id)->where('state', 'active')->get();
-         foreach ($StudentSubjects as $ss) {
+        return $StudentSubjects;
+        foreach ($StudentSubjects as $ss) {
             for ($i=0; $i < count($subjects) ; $i++) {
                 if($ss->subject_id=== $subjects[$i]->id){
                     $subjects[$i]->selected = true;
