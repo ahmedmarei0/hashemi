@@ -42,7 +42,7 @@
 				<div class="col-12 pt-3">
 					<select class="form-control select2-select" name="subjects[]" multiple>
 						@foreach($subjects as $sub)
-							<option value="{{$sub->id}}" @selected($sub->selected)>{{$sub->title}}</option>
+							<option value="{{$sub->id}}" {{ $sub->selected ? "selected" :"" }}>{{$sub->title}}</option>
 						@endforeach
 					</select>
 				</div>
