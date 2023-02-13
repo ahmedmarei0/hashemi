@@ -245,7 +245,7 @@ class UserController extends Controller
             'phone'=>"nullable|max:190",
             'bio'=>"nullable|max:5000",
             'blocked'=>"required|in:0,1",
-            'email'=>"required|unique:users,email,".$user->id,
+            'email'=>"nullable|unique:users,email,".$user->id,
             'username'=>"string|max:190|unique:users,username,".$user->id,
             'password'=>"nullable|min:8|max:190"
         ]);
