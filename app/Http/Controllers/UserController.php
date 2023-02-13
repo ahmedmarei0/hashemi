@@ -136,7 +136,7 @@ class UserController extends Controller
             'phone'=>"nullable|max:190",
             'bio'=>"nullable|max:5000",
             'blocked'=>"required|in:0,1",
-            'email'=>"required|unique:users,email",
+            'email'=>"nullable|unique:users,email",
             'password'=>"required|min:8|max:190",
             'subjects'=>"required|array",
             'subjects.*'=>"required|exists:subjects,id",
