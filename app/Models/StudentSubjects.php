@@ -20,4 +20,8 @@ class StudentSubjects extends Model
 
         return $this->hasOne(\App\Models\User::class, 'id', 'user_id');
     }
+    public function students_subject(){
+
+        return $this->belongsTo(\App\Models\User::class,  'user_id', 'id');
+    }
 }

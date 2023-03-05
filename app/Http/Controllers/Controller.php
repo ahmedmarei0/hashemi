@@ -14,6 +14,8 @@ class Controller extends BaseController
 
 
 
+
+
     public function upload_image($file, $destination)
     {
         return \App\Helpers\UploadFilesHelper::upload_image($file, $destination);

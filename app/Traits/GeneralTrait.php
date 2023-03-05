@@ -7,6 +7,76 @@ use Symfony\Component\HttpFoundation\Response;
 trait GeneralTrait
 {
 
+    public function push_notification($tokens, $title, $body, $subtitle = "")
+    {
+
+        try {
+            //$token_1 = 'e6WBgNuvz0WdoCSZxLpOKM:APA91bFYgWK6jtSrMlG0axpGzWdBz7emIRrc16MCO3Z8jW3gD2NSkGdfaF-y_3pt_k7oh8ZbFUGb0roDp4ycFidta4iGtDEfMAZPfbJTVdyqXhTXYLOnH3LUoCnCAvyvPo6qM-NtLF63';
+            $url = 'https://fcm.googleapis.com/fcm/send';
+            $serverKey = 'AAAAtxCDEp0:APA91bETDiR9e9oAX1y8w560tyIdZJXUS7-OR671Aqa6OcvxJChO8VlEy-Dz3a-3I8dkyVLU9iIhbjs6LK46sLQSybUxLQ4sdHp9gJYTvQYLR0-JllRr9fhXRuqxYLWQ0jVzqIHvr2mX';
+
+            $data = [
+                "registration_ids" => $tokens,
+                'notification' => [
+                    "title" => $title,
+                    "sound" => "sound.caf",
+                ],
+                "data" => [
+                    "type" => $body,
+                    "subtitle" => $subtitle,
+                ],
+                "aps" => [
+                    "alert" => $title,
+                    "sound" => "soundnote.aiff",
+                ],
+                "apns" => [
+                    "payload" => [
+                        "aps" => [
+                            "alert" => $title,
+                            "sound" => "sound.caf",
+                        ],
+                    ],
+                ],
+
+            ];
+            $encodedData = json_encode($data);
+
+            $headers = [
+                'Authorization:key=' . $serverKey,
+                'Content-Type: application/json',
+            ];
+
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+            // Disabling SSL Certificate support temporarly
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $encodedData);
+            // Execute post
+            $result = curl_exec($ch);
+            if ($result === false) {
+                // die('Curl failed: ' . curl_error($ch));
+                return false;
+            }
+            // Close connection
+            curl_close($ch);
+            // FCM response
+            return $result;
+            return true;
+
+        } catch (\Exception$ex) {
+            return false;
+            // return $this->returnError($ex->getCode(), $ex->getMessage());
+
+        }
+
+    }
+
     public function getCurrentLang()
     {
         return app()->getLocale();

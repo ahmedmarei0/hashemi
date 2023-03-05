@@ -62,7 +62,7 @@ class SheetReviewed extends Command
                             'description' => $reason,
                         ]);
 
-                        $this->push_notification($user->notification_token, "تحذير عدم تسليم الواجب", $reason);
+                        $this->push_notification([$user->notification_token], "تحذير عدم تسليم الواجب", $reason);
                     }
 
                     // Register warning on student

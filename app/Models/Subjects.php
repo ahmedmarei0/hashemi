@@ -13,6 +13,12 @@ class Subjects extends Model
         return $this->hasMany(\App\Models\Courses::class,'subject_id');
     }
 
+    public function students()
+    {
+        return $this->belongsToMany(User::class, 'student_subjects', 'subject_id', 'user_id')
+                    ->where('state', 'active');
+    }
+
     public function added_by(){
 
         return $this->hasOne(\App\Models\User::class, 'id', 'user_id');

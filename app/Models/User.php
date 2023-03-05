@@ -53,6 +53,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];*/
 
+    public function subjects()
+    {
+        return $this->belongsToMany(Role::class, 'student_subjects');
+    }
+
     public function sheet(){
         return $this->hasOne(\App\Models\Sheets::class, 'user_id', 'id');
     }
