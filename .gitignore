@@ -1,0 +1,17 @@
+/node_modules
+/public/hot
+/config/livewire.php
+/public/storage
+/storage/*.key
+/vendor
+/.env
+.env
+.htaccess
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
