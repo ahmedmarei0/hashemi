@@ -4,13 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://nafezly.com/css/cust-fonts.css">
-    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://nafezly.com/css/responsive-font.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/cust-fonts.css') }}">
+    <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/responsive-font.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap.rtl.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/pace-theme-default.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/toastr.min.css') }}">
+    <link rel="stylesheet"  href="{{ asset('/css/fancybox.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{asset('/css/font-fileuploader.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/jquery.fileuploader.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/jquery.fileuploader-theme-dragdrop.css')}}">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/css/main-basic.css')}}">
     {{-- <link rel="stylesheet" type="text/css" href="{{asset('/css/dir-ltr.css')}}"> --}}
     <link rel="stylesheet" type="text/css" href="{{asset('/css/flag-icons.min.css')}}">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ asset('/css/select2.min.css') }}" rel="stylesheet" />
     <style type="text/css">
         html{
             --background-0: #eef4f5;
@@ -553,15 +553,15 @@
         </div>
     </div>
     <input type="hidden" id="current_selected_editor">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="{{ asset('/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('/js/fancybox.umd.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('/js/pace.min.js') }}"></script>
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}" ></script>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{{ asset('/js/select2.min.js') }}"></script>
     <script src="{{asset('/js/jquery.fileuploader.min.js')}}"></script>
     <script src="{{asset('/js/validatorjs.min.js')}}"></script>
     <script src="{{asset('/js/favicon_notification.js')}}"></script>
