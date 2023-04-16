@@ -1,4 +1,4 @@
-@php 
+@php
 $website_settings=[
     'website_url'=>env('APP_URL'),
     'website_name'=>$settings->website_name,
@@ -26,8 +26,8 @@ $website_settings=[
     'cache_pages'=>1,
     'canonical'=>str_replace('/index.php', '', request()->url()),
     'twitter_author'=>"Nafezly"
-]; 
-$website_settings=collect($website_settings);  
+];
+$website_settings=collect($website_settings);
 if(request()->url()==env("APP_URL"))
 $page_title=  isset($page_title)&&$page_title !=null?$website_settings['website_name'] .' | '. $page_title :$website_settings['website_name'];
 else
@@ -43,8 +43,8 @@ $website_settings['canonical']= isset($canonical) && $canonical!=null ? $canonic
 وَما نَيلُ المَطالِبِ بِالتَمَنّي وَلَكِن تُؤخَذُ الدُنيا غِلاباوَ
 ما اِستَعصى عَلى قَومٍ مَن الٌإِذا الإِقدامُ كانَ لَهُم رِكابا
 أحمد شوقي
----> 
-<link rel="icon" type="image/png" href="{{$website_settings['website_icon']!=null?$website_settings['website_icon']:$website_settings['website_icon_url']}}" /> 
+--->
+<link rel="icon" type="image/png" href="{{$website_settings['website_icon']!=null?$website_settings['website_icon']:$website_settings['website_icon_url']}}" />
 <link rel="icon" type="image/png" sizes="512x512" href="{{$website_settings['website_icon']!=null?$website_settings['website_icon']:$website_settings['website_icon_url']}}" />
 <link rel="manifest" href="{{$website_settings['website_url']}}/manifest.json">
 <meta name="theme-color" content="{{$website_settings['main_color']}}">
@@ -67,7 +67,7 @@ $website_settings['canonical']= isset($canonical) && $canonical!=null ? $canonic
 <link href="{{$website_settings['website_icon_url']}}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 <link href="{{$website_settings['website_icon_url']}}" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 <link href="{{$website_settings['website_icon_url']}}" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="{{$website_settings['website_icon_url']}}" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" /> 
+<link href="{{$website_settings['website_icon_url']}}" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
 
 <link rel='alternate' href="{{request()->url()}}" hreflang='x-default' />
 
@@ -137,9 +137,9 @@ $website_settings['canonical']= isset($canonical) && $canonical!=null ? $canonic
     @endphp
     @if(count($social_links))
     "sameAs": [
-       
+
         @foreach($social_links as $link)
-            "{{$link}}" 
+            "{{$link}}"
             @if(!$loop->last),@endif
         @endforeach
     ],
@@ -188,9 +188,9 @@ $website_settings['canonical']= isset($canonical) && $canonical!=null ? $canonic
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/serviceworker.js', {
             scope: '.'
-        }).then(function (registration) { 
+        }).then(function (registration) {
             console.log('Laravel PWA: ServiceWorker registration successful with scope: ', registration.scope);
-        }, function (err) { 
+        }, function (err) {
             console.log('Laravel PWA: ServiceWorker registration failed: ', err);
         });
     }

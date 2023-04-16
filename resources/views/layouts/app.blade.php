@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('seo.index')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/cust-fonts.css') }}">
-    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive-font.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.rtl.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/cust-fonts.css') }}">
+    <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/responsive-font.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap.rtl.min.css') }}">
 
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css"> --}}
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/toastr.min.css') }}">
-    <link rel="stylesheet"  href="{{ asset('css/fancybox.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/toastr.min.css') }}">
+    <link rel="stylesheet"  href="{{ asset('/css/fancybox.css') }}" />
 
     {{-- <link rel="stylesheet" type="text/css" href="{{asset('/css/font-fileuploader.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/jquery.fileuploader.min.css')}}">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/style.css')}}">
 
     {!!$settings->header_code!!}
-    @livewireStyles
+    {{-- @livewireStyles --}}
     @if(auth()->check())
         @php
         if(session('seen_notifications')==null)
@@ -32,7 +32,7 @@
         $unreadNotifications=auth()->user()->unreadNotifications()->count();
         @endphp
     @endif
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    {{-- <link href="{{ asset('/css/app.css') }}" rel="stylesheet"> --}}
     <style type="text/css">
         *:not(.fileuploader):not([class^="fileuploader-icon-"]):not([class^="fa"]):not(.cairo):not([class^="vj"]):not([class^="tie-"]) {
             font-family: 'DinNext',sans-serif!important;
@@ -146,10 +146,10 @@
         <x-footer />
     </div>
 
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/fancybox.umd.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/toastr.min.js') }}"></script>
-    <script src="{{ asset('js/pace.min.js') }}"></script>
+    <script src="{{ asset('/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('/js/fancybox.umd.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('/js/pace.min.js') }}"></script>
 
     {{-- <script src="{{asset('/js/jquery.fileuploader.min.js')}}"></script> --}}
     <script src="{{asset('/js/validatorjs.min.js')}}"></script>
@@ -159,7 +159,7 @@
     <script src="{{asset('/assets/js/theme.js')}}"></script>
 
 
-    @livewireScripts
+    {{-- @livewireScripts --}}
     @include('layouts.scripts')
     @yield('scripts')
     {!!$settings->footer_code!!}
