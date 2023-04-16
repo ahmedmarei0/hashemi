@@ -4,21 +4,21 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ url('/css/cust-fonts.css') }}">
-    <link href="{{ url('/css/all.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ url('/css/responsive-font.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('/css/bootstrap.rtl.min.css') }}">
-    <link rel="stylesheet" href="{{ url('/css/pace-theme-default.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('/css/toastr.min.css') }}">
-    <link rel="stylesheet"  href="{{ url('/css/fancybox.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{url('/css/font-fileuploader.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url('/css/jquery.fileuploader.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url('/css/jquery.fileuploader-theme-dragdrop.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url('/css/main-dashboard.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url('/css/main-basic.css')}}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{url('/css/dir-ltr.css')}}"> --}}
-    <link rel="stylesheet" type="text/css" href="{{url('/css/flag-icons.min.css')}}">
-    <link href="{{ url('/css/select2.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/cust-fonts.css') }}">
+    <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/responsive-font.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap.rtl.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/pace-theme-default.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/toastr.min.css') }}">
+    <link rel="stylesheet"  href="{{ asset('/css/fancybox.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/font-fileuploader.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/jquery.fileuploader.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/jquery.fileuploader-theme-dragdrop.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/main-dashboard.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/main-basic.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('/css/dir-ltr.css')}}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/flag-icons.min.css')}}">
+    <link href="{{ asset('/css/select2.min.css') }}" rel="stylesheet" />
     <style type="text/css">
         html{
             --background-0: #eef4f5;
@@ -218,7 +218,7 @@
         <div class="col-12 px-0 pb-4 text-center justify-content-center align-items-center ">
             <a href="{{route('admin.profile.edit')}}">
 
-            <img src="{{ url(auth()->user()->getUserAvatar()) }}" style="width: 80px;height: 80px;color: var(--background-1);border-radius: 50%" class="d-inline-block">
+            <img src="{{ asset(auth()->user()->getUserAvatar()) }}" style="width: 80px;height: 80px;color: var(--background-1);border-radius: 50%" class="d-inline-block">
                 </a>
                 <div class="col-12 px-0 mt-2 text-center" style="color: #232323;">
                     مرحباً {{auth()->user()->name}}
@@ -504,7 +504,7 @@
                     </div>
                     <div class="col-12 px-0 d-flex justify-content-center align-items-center  dropdown"  style="width: 55px;height: 55px;" >
                         <div style="width: 55px;height: 55px;cursor: pointer;" data-bs-toggle="dropdown" aria-expanded="false" class="d-flex justify-content-center align-items-center cursor-pointer">
-                            <img src="{{ url(auth()->user()->getUserAvatar())}}" style="padding: 10px;border-radius: 50%;width: 55px;height: 55px;">
+                            <img src="{{ asset(auth()->user()->getUserAvatar())}}" style="padding: 10px;border-radius: 50%;width: 55px;height: 55px;">
                         </div>
                         <ul class="dropdown-menu shadow border-0" aria-labelledby="dropdownMenuButton1" style="top: -3px;">
                                 <li><a class="dropdown-item font-1" href="/" target="_blank"><span class="fal fa-desktop font-1"></span> عرض الموقع</a></li>
@@ -545,7 +545,7 @@
             </div>
             <div class="col-12 px-0  " style="margin-top: 55px;position: relative;">
                 <div style="position:fixed;display: flex;align-items: center;justify-content: center;height: 100vh;background: var(--background-1);z-index: 10;margin-top: -15px;" id="loading-image-container">
-                    <img src="{{ url('images/loading.gif') }}" style="position:fixed;width: 120px;max-width: 80%;margin-top: -60px;" id="loading-image">
+                    <img src="{{ asset('images/loading.gif') }}" style="position:fixed;width: 120px;max-width: 80%;margin-top: -60px;" id="loading-image">
                 </div>
 
                 @yield('content')
@@ -553,19 +553,19 @@
         </div>
     </div>
     <input type="hidden" id="current_selected_editor">
-    <script src="{{ url('/js/jquery.min.js') }}"></script>
-    <script src="{{ url('/js/fancybox.umd.js') }}"></script>
-    <script type="text/javascript" src="{{ url('/js/toastr.min.js') }}"></script>
-    <script src="{{ url('/js/pace.min.js') }}"></script>
-    <script src="{{ url('/js/bootstrap.bundle.min.js') }}" ></script>
+    <script src="{{ asset('/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('/js/fancybox.umd.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('/js/pace.min.js') }}"></script>
+    <script src="{{ asset('/js/bootstrap.bundle.min.js') }}" ></script>
 
 
 
-    <script src="{{ url('/js/select2.min.js') }}"></script>
-    <script src="{{url('/js/jquery.fileuploader.min.js')}}"></script>
-    <script src="{{url('/js/validatorjs.min.js')}}"></script>
-    <script src="{{url('/js/favicon_notification.js')}}"></script>
-    <script src="{{url('/js/main.js')}}"></script>
+    <script src="{{ asset('/js/select2.min.js') }}"></script>
+    <script src="{{asset('/js/jquery.fileuploader.min.js')}}"></script>
+    <script src="{{asset('/js/validatorjs.min.js')}}"></script>
+    <script src="{{asset('/js/favicon_notification.js')}}"></script>
+    <script src="{{asset('/js/main.js')}}"></script>
     <script type="text/javascript">
         $('input[required],select[required],textarea[required]').parent().parent().find('>div:nth-of-type(1)').append('<span style="color:red;font-size:16px">*</span>');
         $("[name='title'],[name='slug'],[name='meta_description']").on('keypress',function(){
