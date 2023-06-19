@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Subjects;
 use Illuminate\Pagination\Paginator;
 use App\Models\Courses;
+use App\Models\User;
 
 class SubjectsController extends Controller
 {
@@ -25,15 +26,30 @@ class SubjectsController extends Controller
     public function index(Request $request)
     {
 
-        $subjects = Subjects::where(function ($q) use ($request) {
+        // $subjects = Subjects::where(function ($q) use ($request) {
+        //     if ($request->id != null) {
+        //         $q->where('id', $request->id);
+        //     }
+        //     if ($request->q != null) {
+        //         $q->where('title', 'LIKE', '%' . $request->q . '%')->orWhere('description', 'LIKE', '%' . $request->q . '%');
+        //     }
+
+        // })->with('added_by:id,name')->paginate();
+        // $StudentSubjects =StudentSubjects::where('user_id', $user->id)->where('state', 'active')->get();
+        $user = User::with(['subjects' => function ($q) use ($request) {
             if ($request->id != null) {
-                $q->where('id', $request->id);
+                $q->where('id', $request->id)->paginate();
             }
             if ($request->q != null) {
-                $q->where('title', 'LIKE', '%' . $request->q . '%')->orWhere('description', 'LIKE', '%' . $request->q . '%');
+                $q->where('title', 'LIKE', '%' . $request->q . '%')->orWhere('description', 'LIKE', '%' . $request->q . '%')->paginate();
             }
 
-        })->with('added_by:id,name')->paginate();
+        }])->find(\Auth::id());
+        $subjects = [];
+        if($user->subjects != null)
+        $subjects = new Paginator($user->subjects, 25);
+        // return $subjects;
+
         return view('courses.subject.showSubjects', compact('subjects'));
     }
 
@@ -59,10 +75,15 @@ class SubjectsController extends Controller
             'title'=>"required|string|max:190",
             'description'=>"nullable|max:100000"
         ]);
-        Subjects::create([
+        $subject = Subjects::create([
             'title' => $request->title,
             'description' => $request->description,
             'user_id' => auth()->user()->id,
+        ]);
+        \App\Models\StudentSubjects::create([
+            'user_id'=> \Auth::id(),
+            'subject_id'=> $subject->id,
+            'state'=> 'active'
         ]);
         return redirect()->route('admin.subject.index');
 

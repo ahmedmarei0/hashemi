@@ -55,7 +55,8 @@ class User extends Authenticatable
 
     public function subjects()
     {
-        return $this->belongsToMany(Role::class, 'student_subjects');
+        return $this->belongsToMany(Subjects::class, 'student_subjects', 'user_id', 'subject_id')
+                    ->withPivot('id','user_id', 'subject_id', 'state','expired_date')->wherePivot('state', 'active')->with('added_by:id,name');
     }
 
     public function sheet(){
@@ -89,5 +90,6 @@ class User extends Authenticatable
     public function warning(){
         return $this->hasMany(\App\Models\Warnings::class);
     }
+
 
 }

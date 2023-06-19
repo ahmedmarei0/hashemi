@@ -52,7 +52,7 @@
 						<td style="width: 270px;">
 
 							@permission('courses-read')
-							<a href="{{route('admin.course.index',['subject'=>$subject])}}">
+							<a href="{{route('admin.course.index',['subject'=>$subject->id])}}">
 								<span class="btn  btn-outline-primary btn-sm font-1 mx-1">
 									<span class="fas fa-search "></span> عرض
 								</span>
@@ -60,7 +60,7 @@
 							@endpermission
 
 							@permission('courses-update')
-							<a href="{{route('admin.subject.edit',$subject)}}">
+							<a href="{{route('admin.subject.edit',$subject->id)}}">
 								<span class="btn  btn-outline-success btn-sm font-1 mx-1">
 									<span class="fas fa-wrench "></span> تحكم
 								</span>
@@ -68,13 +68,13 @@
 							@endpermission
 							@permission('courses-delete')
                             @if ($subject->state =='shown')
-                            <form method="POST" action="{{route('admin.subject.destroy',['subject' => $subject])}}" class="d-inline-block">@csrf @method("DELETE")
+                            <form method="POST" action="{{route('admin.subject.destroy',['subject' => $subject->id])}}" class="d-inline-block">@csrf @method("DELETE")
 								<button class="btn  btn-outline-danger btn-sm font-1 m-1" onclick="var result = confirm('لن يتمكن أى مستخدم للتطبيق من روية هذه أى دروس او فصول هذه المادة ؟');if(result){}else{event.preventDefault()}">
 									<span class="fas fa-trash "></span>أخفاء من التطبيق
 								</button>
 							</form>
                             @else
-                            <form method="POST" action="{{route('admin.subject.destroy',['subject' => $subject])}}" class="d-inline-block">@csrf @method("DELETE")
+                            <form method="POST" action="{{route('admin.subject.destroy',['subject' => $subject->id])}}" class="d-inline-block">@csrf @method("DELETE")
 								<button class="btn  btn-outline-success btn-sm font-1 m-1" onclick="var result = confirm('سوف يتمكن مستخدمى التطبيق من روئة جمع الدروس والفصول فى هذه المادة ؟');if(result){}else{event.preventDefault()}">
 									<span class="fas fa-trash "></span>أظهار فى التطبيق
 								</button>

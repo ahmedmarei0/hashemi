@@ -17,6 +17,7 @@ class CoursesController extends Controller
      */
     public function index(Request $request, Subjects $subject)
     {
+
         $courses = Courses::where('subject_id', $subject->id)->where(function ($q) use ($request) {
             if ($request->id != null) {
                 $q->where('id', $request->id);
@@ -27,6 +28,7 @@ class CoursesController extends Controller
             }
 
         })->with('added_by:id,name')->paginate();
+
         return view('courses.course.showCoures', compact('courses', 'subject'));
     }
 
