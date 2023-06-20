@@ -263,6 +263,8 @@ class UserController extends Controller
                 }
              }
 
+
+
              foreach ($StudentSubjects as $ss) {
                 if(in_array($ss->subject_id,$request->subjects) === false){
                     $ss->state = 'expired';
