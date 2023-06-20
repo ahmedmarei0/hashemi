@@ -26,28 +26,29 @@ class SubjectsController extends Controller
     public function index(Request $request)
     {
 
-        // $subjects = Subjects::where(function ($q) use ($request) {
-        //     if ($request->id != null) {
-        //         $q->where('id', $request->id);
-        //     }
-        //     if ($request->q != null) {
-        //         $q->where('title', 'LIKE', '%' . $request->q . '%')->orWhere('description', 'LIKE', '%' . $request->q . '%');
-        //     }
-
-        // })->with('added_by:id,name')->paginate();
-        // $StudentSubjects =StudentSubjects::where('user_id', $user->id)->where('state', 'active')->get();
-        $user = User::with(['subjects' => function ($q) use ($request) {
+        $subjects = Subjects::where(function ($q) use ($request) {
             if ($request->id != null) {
-                $q->where('id', $request->id)->paginate();
+                $q->where('id', $request->id);
             }
             if ($request->q != null) {
-                $q->where('title', 'LIKE', '%' . $request->q . '%')->orWhere('description', 'LIKE', '%' . $request->q . '%')->paginate();
+                $q->where('title', 'LIKE', '%' . $request->q . '%')->orWhere('description', 'LIKE', '%' . $request->q . '%');
             }
 
-        }])->find(\Auth::id());
-        $subjects = [];
-        if($user->subjects != null)
-        $subjects = new Paginator($user->subjects, 25);
+        })->with('added_by:id,name')->paginate();
+        // $StudentSubjects =StudentSubjects::where('user_id', $user->id)->where('state', 'active')->get();
+
+        // $user = User::with(['subjects' => function ($q) use ($request) {
+        //     if ($request->id != null) {
+        //         $q->where('id', $request->id)->paginate();
+        //     }
+        //     if ($request->q != null) {
+        //         $q->where('title', 'LIKE', '%' . $request->q . '%')->orWhere('description', 'LIKE', '%' . $request->q . '%')->paginate();
+        //     }
+
+        // }])->find(\Auth::id());
+        // $subjects = [];
+        // if($user->subjects != null)
+        // $subjects = new Paginator($user->subjects, 25);
         // return $subjects;
 
         return view('courses.subject.showSubjects', compact('subjects'));
