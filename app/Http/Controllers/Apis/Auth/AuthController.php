@@ -51,8 +51,6 @@ class AuthController extends Controller
                 $user->remember_token = $token;
                 $user->notification_token = $request->notification_token;
                 $user->save();
-                $user->android_version = 1;
-                $user->ios_version = 1;
                 return $this -> returnSuccessMessageApi( $user);
             }
             else{
