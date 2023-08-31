@@ -47,7 +47,7 @@ class CoursesController extends Controller
         env("APP_URL").env("STORAGE_URL"). "/app/mock2.jpg",
         env("APP_URL").env("STORAGE_URL"). "/app/mock3.jpg"
     ];
-        return $this->returnSuccessMessageApi([ 'subjects' => $subjects , 'images' => $images]);
+        return $this->returnSuccessMessageApi([ 'subjects' => $subjects , 'images' => $images , 'android_version' => 1 , 'ios_version' => 2]);
     }
 
 
