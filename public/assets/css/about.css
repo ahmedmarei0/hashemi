@@ -10,8 +10,8 @@
     font-style: normal;
     font-display: swap;
 }
-.bg-green{
-    background: #00AB41;
+.bg-blue{
+    background: #0042ab;
 }
 .text-green{
     color: #00AB41;
@@ -53,7 +53,7 @@
 }
 footer .footer{
     padding: 20px 0px;
-    background: #00AB41;
+    background: #0042ab;
     text-align: center;
 }
 footer .footer .icon{
