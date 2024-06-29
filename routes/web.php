@@ -179,4 +179,4 @@ Route::get('sitemaps/{name}/{page}/sitemap.xml',[SiteMapController::class,'viewe
 // Route::post('contact',[FrontController::class,'contact_post'])->name('contact-post');
 // Route::post('comment',[FrontController::class,'comment_post'])->name('comment-post');
 
-Route::view('fraday/privacy/policy','front.privacy_policy')->name('privacy.policy');
+Route::view('druskpro/privacy/policy','front.privacy_policy')->name('privacy.policy');
